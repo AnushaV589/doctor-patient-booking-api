@@ -248,10 +248,4 @@ The documentation includes:
 - Performance monitoring
 - Data persistence and backup mechanisms
 
-## 👥 Team
-
-Developed for **Rx.Now** - Building the future of AI-powered preventive healthcare
-
-**Contact**: sovereign.x.kartik@gmail.com
-
 ---
