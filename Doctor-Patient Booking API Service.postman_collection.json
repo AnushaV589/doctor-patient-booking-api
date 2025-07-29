@@ -10,8 +10,29 @@
 		{
 			"name": "Add a new doctor(POST)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n  \"id\": 1,\r\n  \"name\": \"Dr. Anusha Reddy\",\r\n  \"specialization\": \"Cardiologist\",\r\n  \"email\": \"anusha.reddy@example.com\",\r\n  \"phone\": \"+91-9999988888\",\r\n  \"gender\": \"Female\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/doctors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"doctors"
+					]
+				}
 			},
 			"response": []
 		},
@@ -34,16 +55,50 @@
 		{
 			"name": "Delete docter(delete)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/doctors/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"doctors",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Add Patient(POST)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Anusha\",\r\n  \"age\": 22,\r\n  \"gender\": \"Female\",\r\n  \"contact\": \"9133508724\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
 			},
 			"response": []
 		},
@@ -66,24 +121,80 @@
 		{
 			"name": "Update Patient(PUT)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Karthik\",\r\n  \"age\": 23,\r\n  \"gender\": \"Female\",\r\n  \"contact\": \"9133508724\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/patients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Delete Patient(DELETE)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/patients/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"patients",
+						"3"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Book Appointment(POST)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"doctorId\": 2,\r\n  \"patientId\": 2,\r\n  \"appointmentDateTime\": \"2025-08-01T10:30:00\",\r\n  \"reason\": \"Regular checkup\",\r\n  \"notes\": \"Patient has mild headache\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
 			},
 			"response": []
 		},
@@ -91,7 +202,19 @@
 			"name": "Get All Docters(Get)",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/doctors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"doctors"
+					]
+				}
 			},
 			"response": []
 		},
@@ -99,7 +222,19 @@
 			"name": "Get All Appointments",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
 			},
 			"response": []
 		},
@@ -107,7 +242,25 @@
 			"name": "Get Appointments by Doctor ID",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appointments?doctor_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments"
+					],
+					"query": [
+						{
+							"key": "doctor_id",
+							"value": "1"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -130,16 +283,55 @@
 		{
 			"name": "Update Appointment Status",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [
+					{
+						"key": "status",
+						"value": "COMPLETED",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/appointments/6/status?status=COMPLETED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments",
+						"6",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "COMPLETED"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Cancel Appointment (Delete)",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/appointments/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments",
+						"6"
+					]
+				}
 			},
 			"response": []
 		}
